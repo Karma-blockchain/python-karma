@@ -11,4 +11,12 @@ known_chains = {
         "chain_id": "39f5e2ede1f8bc1a3a54a7914414e3779e33193f1f5693510e73cb7a87617447",
         "core_symbol": "TEST",
         "prefix": "TEST"},
+    "KRMT": {
+        "chain_id": "e81bea67cebfe8612010fc7c26702bce10dc53f05c57ee6d5b720bbe62e51bef",
+        "core_symbol": "KRMT",
+        "prefix": "KRMT"},
+    "KRM": {
+        "chain_id": "c85b4a30545e09c01aaa7943be89e9785481c1e7bd5ee7d176cb2b3d8dd71a70",
+        "core_symbol": "KRM",
+        "prefix": "KRM"}
 }
