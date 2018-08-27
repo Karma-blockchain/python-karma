@@ -26,7 +26,7 @@ from .objects import (
     AccountCreateExtensions
 )
 
-default_prefix = "BTS"
+default_prefix = "KRM"
 class_idmap = {}
 class_namemap = {}
 
@@ -62,11 +62,49 @@ def getOperationNameForId(i):
     return "Unknown Operation ID %d" % i
 
 
+class Credit_request_operation(GrapheneObject):
+    def __init__(self, *args, **kwargs):
+        if isArgsThisClass(self, args):
+            self.data = args[0].data
+        else:
+            if len(args) == 1 and len(kwargs) == 0:
+                kwargs = args[0]
+            super().__init__(OrderedDict([
+                ('fee', Asset(kwargs["fee"])),
+                ('borrower', ObjectId(kwargs["borrower"], "account")),
+                ('loan_period', kwargs["loan_period"]),
+                ('loan_persent', kwargs["loan_persent"]),
+                ('loan_memo', kwargs["loan_memo"]),
+                ('loan_asset', Asset(kwargs["loan_asset"])),
+                ('deposit_asset', Asset(kwargs["deposit_asset"])),
+                ('extensions', Set([])),
+            ]))
+
+
+class Credit_approve_operation(GrapheneObject):
+    def __init__(self, *args, **kwargs):
+        if isArgsThisClass(self, args):
+            self.data = args[0].data
+        else:
+            if len(args) == 1 and len(kwargs) == 0:
+                kwargs = args[0]
+            # if "credit_memo" in kwargs and kwargs["credit_memo"]:
+            #     memo = Optional(Memo(kwargs["credit_memo"]))
+            # else:
+            #     memo = Optional(None)
+            super().__init__(OrderedDict([
+                ('fee', Asset(kwargs["fee"])),
+                ('creditor', ObjectId(kwargs["creditor"], "account")),
+                ('credit_memo', String("")),
+                ('credit_request_uuid', String(kwargs["credit_request_uuid"])),
+            ]))
+
+
 class Transfer(GrapheneObject):
     def __init__(self, *args, **kwargs):
         # Allow for overwrite of prefix
         if isArgsThisClass(self, args):
-                self.data = args[0].data
+            self.data = args[0].data
         else:
             if len(args) == 1 and len(kwargs) == 0:
                 kwargs = args[0]
@@ -92,7 +130,7 @@ class Transfer(GrapheneObject):
 class Asset_publish_feed(GrapheneObject):
     def __init__(self, *args, **kwargs):
         if isArgsThisClass(self, args):
-                self.data = args[0].data
+            self.data = args[0].data
         else:
             if len(args) == 1 and len(kwargs) == 0:
                 kwargs = args[0]
@@ -594,3 +632,5 @@ class Committee_member_create(GrapheneObject):
 
 
 fill_classmaps()
+print(class_namemap)
+print(class_idmap)

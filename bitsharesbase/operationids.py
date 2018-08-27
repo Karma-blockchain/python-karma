@@ -47,6 +47,11 @@ ops = [
     "fba_distribute",
     "bid_collateral",
     "execute_bid",
+    "credit_request_operation",
+    "credit_approve_operation",
+    "credit_request_cancel_operation",
+    "comment_credit_request_operation",
+    "settle_credit_operation"
 ]
 operations = {o: ops.index(o) for o in ops}
 

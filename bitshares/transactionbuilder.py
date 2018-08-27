@@ -223,6 +223,7 @@ class TransactionBuilder(dict):
                 try:
                     wif = self.blockchain.wallet.getPrivateKeyForPublicKey(
                         authority[0])
+                    print(wif)
                     r.append([wif, authority[1]])
                 except Exception:
                     pass
@@ -379,6 +380,7 @@ class TransactionBuilder(dict):
             return
 
         ret = self.json()
+        print(ret)
 
         if self.blockchain.nobroadcast:
             log.warning("Not broadcasting anything!")

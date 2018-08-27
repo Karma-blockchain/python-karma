@@ -471,6 +471,63 @@ class BitShares(object):
         })
         return self.finalizeOp(op, account, "active", **kwargs)
 
+    def credit_request(self, borrower, loan_period, loan_persent,
+                       loan_memo, loan_asset, deposit_asset):
+        """
+
+        Args:
+            borrower:
+            load_period:
+            loan_persent:
+            loan_memo:
+            loan_asset:
+            deposit_asset:
+
+        Returns:
+
+        """
+        borrower = Account(borrower, blockchain_instance=self)
+
+        op = operations.Credit_request_operation(**{
+            "fee": {"amount": 0, "asset_id": "1.3.0"},
+            "borrower": borrower["id"],
+            "loan_period": loan_period,
+            "loan_persent": "1",
+            "loan_memo": "",
+            "loan_asset": {
+                "amount": 1000,
+                "asset_id": "1.3.2"
+            },
+            "deposit_asset": {
+                "amount": 0,
+                "asset_id": "1.3.0"
+            },
+            "prefix": self.prefix
+        })
+        return self.finalizeOp(op, borrower, "active")
+
+    def credit_approve(self, creditor, credit_request_uuid, credit_memo = '',
+                       **kwargs):
+        """ Approve credit request.
+
+            :param str creditor: Creditor.
+            :param str credit_request_uuid: uuid of request.
+            :param str credit_memo: credit_memo string, not encrypted.
+        """
+
+        account = Account(creditor, blockchain_instance=self)
+        print(account)
+
+        op = operations.Credit_approve_operation(**{
+            "fee": {"amount": 0, "asset_id": "1.3.0"},
+            "creditor": account["id"],
+            "credit_request_uuid": credit_request_uuid,
+            "credit_memo": credit_memo,
+            "prefix": self.prefix
+        })
+        print(op)
+        return self.finalizeOp(op, account, "active")
+
     # -------------------------------------------------------------------------
     # Account related calls
     # -------------------------------------------------------------------------
