@@ -632,5 +632,3 @@ class Committee_member_create(GrapheneObject):
 
 
 fill_classmaps()
-print(class_namemap)
-print(class_idmap)

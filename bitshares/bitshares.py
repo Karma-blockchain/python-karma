@@ -525,7 +525,6 @@ class BitShares(object):
             "credit_memo": credit_memo,
             "prefix": self.prefix
         })
-        print(op)
         return self.finalizeOp(op, account, "active")
 
     # -------------------------------------------------------------------------
