@@ -516,7 +516,6 @@ class BitShares(object):
         """
 
         account = Account(creditor, blockchain_instance=self)
-        print(account)
 
         op = operations.Credit_approve_operation(**{
             "fee": {"amount": 0, "asset_id": "1.3.0"},
