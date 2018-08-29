@@ -1,25 +1,4 @@
-# Python Library for BitShares
-
-![](https://img.shields.io/pypi/v/bitshares.svg?style=for-the-badge)
-![](https://img.shields.io/github/release/xeroc/python-bitshares.svg?style=for-the-badge)
-![](https://img.shields.io/github/downloads/xeroc/python-bitshares/total.svg?style=for-the-badge)
-![](https://img.shields.io/pypi/pyversions/bitshares.svg?style=for-the-badge)
-![](https://img.shields.io/pypi/l/bitshares.svg?style=for-the-badge)
-![](https://cla-assistant.io/readme/badge/bitshares/python-bitshares)
-
-**Stable**
-
-[![docs master](https://readthedocs.org/projects/python-bitshares/badge/?version=latest)](http://python-bitshares.readthedocs.io/en/latest/)
-[![Travis master](https://travis-ci.org/xeroc/python-bitshares.png?branch=master)](https://travis-ci.org/xeroc/python-bitshares)
-[![codecov](https://codecov.io/gh/xeroc/python-bitshares/branch/master/graph/badge.svg)](https://codecov.io/gh/xeroc/python-bitshares)
-
-**Develop**
-
-[![docs develop](https://readthedocs.org/projects/python-bitshares/badge/?version=develop)](http://python-bitshares.readthedocs.io/en/develop/)
-[![Travis develop](https://travis-ci.org/xeroc/python-bitshares.png?branch=develop)](https://travis-ci.org/xeroc/python-bitshares)
-[![codecov develop](https://codecov.io/gh/xeroc/python-bitshares/branch/develop/graph/badge.svg)](https://codecov.io/gh/xeroc/python-bitshares)
-
----
+# Python Library for Karma.Red
 
 ## Documentation
 
@@ -44,17 +23,6 @@ $ python3 setup.py install --user
 ```
 $ pip3 install --user --upgrade
 ```
-
-## Contributing
-
-python-bitshares welcomes contributions from anyone and everyone. Please
-see our [guidelines for contributing](CONTRIBUTING.md) and the [code of
-conduct](CODE_OF_CONDUCT.md).
-
-### Discussion and Developers
-
-Discussions around development and use of this library can be found in a
-[dedicated Telegram Channel](https://t.me/pybitshares)
 
 ### License
 
